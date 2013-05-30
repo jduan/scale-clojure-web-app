@@ -50,7 +50,7 @@ echo 9999999 | sudo tee /proc/sys/fs/file-max
 
 public class ConcurrencyBench {
 
-    final static int PER_IP = 20000;
+    final static int PER_IP = 2000;
     final static InetSocketAddress ADDRS[] = new InetSocketAddress[30];
     // 600k concurrent connections
     final static int CONCURENCY = PER_IP * ADDRS.length;
@@ -74,7 +74,8 @@ public class ConcurrencyBench {
     }
 
     public static int randidelTime() {
-        int ms = 10000 + r.nextInt(90000); // 10s ~ 100s
+        // int ms = 10000 + r.nextInt(90000); // 10s ~ 100s
+        int ms = 1000;
         return ms;
     }
 
